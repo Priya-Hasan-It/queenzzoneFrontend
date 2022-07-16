@@ -1,18 +1,25 @@
 import React from 'react';
-import {
-  BrowserRouter as Router, Switch, Route
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 
 
 import './App.css';
+import BottomNavigation from './components/BottomNavBar';
+import Search from './components/HeaderComponents/Search';
 import HomePage from './pages/HomePage.js';
+
+
 
 function App() {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <>
+    <Search />
+     <Routes>     
+      <Route path="/" element={<HomePage />} />     
+    </Routes>
+    <BottomNavigation />
+
+    </>
   );
 }
 

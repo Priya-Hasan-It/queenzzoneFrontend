@@ -1,34 +1,36 @@
-import React from 'react'
-import Img from '../Img/massage2.jpg'
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import { Chat, HandbagFill, Heart, SearchIcon } from "../../svg";
 
 const Search = () => {
-    return (
-        <div>
-            <section className='search'>
+  return (
+    <div>
+      <section className="search">
+        <div className="container c_flex">
+          <div className="">
+            <Chat color="#CAF0F8" height="50" width="50" />
+          </div>
 
-                <div className="container c_flex">
-                    <div className='logo width'>
-                        <img src={Img} alt="Massage Icon" />
-                    </div>
+          <div className="search-box d-flex bg-light rounded-4 align-items-center ">
+            <input
+              className="block bg-transparent border-0"
+              type="text"
+              placeholder="Search and hit enter..."
+            />
+            <div className="me-2 p-2">
+              <SearchIcon color="#37bdd8" height="40" width="40" />
+            </div>
+          </div>
 
-                    <div className="search-box f_flex">
-                        <input type="text" placeholder='Search and hit enter...' />
-                        <i className='fa fa-search'></i>
-                    </div>
-
-                    <div className="icon f_flex shop-logo">
-                        <i className='fa fa-user icon-circle'></i>
-                        <div className="cart">
-                            <i className='fa fa-shopping-bag icon-circle'></i>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
+          <div className="">
+            <Heart color="#CAF0F8" height="40" width="40" />
+          </div>
+          <div className="">
+            <HandbagFill color="#CAF0F8" height="40" width="40" />
+          </div>
         </div>
-    )
-}
+      </section>
+    </div>
+  );
+};
 
-export default Search
+export default Search;
