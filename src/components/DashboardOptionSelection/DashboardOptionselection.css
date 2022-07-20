@@ -1,0 +1,22 @@
+.optionIconAndText{
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    color:#0077B6
+}
+.optionIconAndText :nth-child(2){
+    font-size: 18px;
+    font-weight: 500;
+    color:#0077B6
+}
+.optionHr{
+    text-align: center;
+    width: 160px;
+    border: 1px solid #0096C7;
+}
+.trans{ 
+    transition:  0.5s;
+}
+.selectionColor{
+    color: #03045e !important;
+}

@@ -1,12 +1,13 @@
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import React, { useEffect, useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import eShopLogo from "../../asset/logo/eShopLogo4.png";
 import globeVar from "../../GlobalVar";
 
 export default function Login() {
-  // let history = useHistory();
+  const navigate = useNavigate();
 
   // default email and password
   const [defoldEmailAndPassword, setDefoldEmailAndPassword] = useState({
@@ -41,7 +42,14 @@ export default function Login() {
         localStorage.setItem("password", globeVar.Pass);
       }
       //  history.push("/dashboard");
+      navigate("/dashboard");
     }
+  };
+
+  // Cancel btn
+  const cancelBtn = () => {
+    setGetEmail("");
+    setGetPass("");
   };
 
   // useEffect for Local storage
@@ -52,6 +60,7 @@ export default function Login() {
         localStorage.getItem("password") === globeVar.Pass
       ) {
         //   history.push("/dashboard");
+        navigate("/dashboard");
       }
     }
   }, []);
@@ -86,6 +95,7 @@ export default function Login() {
                   Email
                 </label>
                 <input
+                  value={getEmail}
                   type="email"
                   placeholder="email"
                   className="form-control"
@@ -107,6 +117,7 @@ export default function Login() {
                   Password
                 </label>
                 <input
+                  value={getPass}
                   type="password"
                   placeholder="password"
                   className="form-control"
@@ -146,6 +157,7 @@ export default function Login() {
               <div className="d-flex justify-content-between">
                 <div>
                   <Button
+                    onClick={() => cancelBtn()}
                     style={{
                       width: "105px",
                       height: "32px",

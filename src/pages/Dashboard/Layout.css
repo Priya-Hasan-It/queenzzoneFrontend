@@ -1,0 +1,14 @@
+
+/* Left side bar  */
+.left-side-bar{
+    background-color: #90E0EF;
+    width: 16%;
+    height:100vh;
+}
+/* right side bar  */
+.right-side-bar{
+    width: 84%;
+    height:100vh;
+    background-color: green;
+    overflow: scroll;
+}

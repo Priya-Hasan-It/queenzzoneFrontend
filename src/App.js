@@ -2,21 +2,23 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
-import BottomNavigation from "./components/BottomNavBar";
-import Search from "./components/HeaderComponents/Search";
+import DashboardLayout from "./pages/Dashboard/Layout";
 import HomePage from "./pages/HomePage.js";
 import Login from "./pages/loginPage";
 
 function App() {
   return (
     <>
-      <Search />
+      {/* <Search /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<DashboardLayout />} />
+
+        <Route path="/dashboard/:optionName" element={<DashboardLayout />} />
       </Routes>
 
-      <BottomNavigation />
+      {/* <BottomNavigation /> */}
     </>
   );
 }
